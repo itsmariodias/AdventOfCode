@@ -7,9 +7,9 @@ output = 0
 def get_difference(numbers):
     differences = [numbers[i] - numbers[i - 1] for i in range(1, len(numbers))]
     if sum(differences) == 0:
-        return numbers[0]
+        return numbers[-1] + 0
     else:
-        return numbers[0] - get_difference(differences)
+        return numbers[-1] + get_difference(differences)
 
 
 for line in lines:
