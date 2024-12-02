@@ -90,7 +90,6 @@ fn main() -> Result<()> {
                     .filter_map(|s: &str| s.parse::<i32>().ok()) // Parse each part into i32
                     .collect();
 
-
                 let mut sets: Vec<Vec<i32>> = vec![levels.clone()];
                 sets.append(&mut create_subsets(&levels));
 
@@ -102,7 +101,7 @@ fn main() -> Result<()> {
                         let second = levels[1];
                         let diff = second - first;
                         let order;
-    
+
                         if 1 <= diff && diff <= 3 {
                             order = 1;
                         } else if -3 <= diff && diff <= -1 {
@@ -110,7 +109,7 @@ fn main() -> Result<()> {
                         } else {
                             continue;
                         }
-    
+
                         let mut flag = true;
                         for i in 1..length {
                             let diff = levels[i + 1] - levels[i];
@@ -126,8 +125,6 @@ fn main() -> Result<()> {
                             break;
                         }
                     }
-    
-                    
                 }
             }
         }
